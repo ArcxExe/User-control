@@ -2,8 +2,8 @@ package com.example.demo.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.repositories.User;
-import com.example.demo.servise.UserServise;
+import com.example.demo.model.User;
+import com.example.demo.servise.UserService;
 
 import java.util.List;
 
@@ -17,18 +17,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@RequestMapping(path = "api/users")
+@RequestMapping(path = "/api/users")
 public class UserController {
 
-  private final UserServise userServise;
+  private final UserService userServise;
 
-  UserController(UserServise userServise) {
+  UserController(UserService userServise) {
     this.userServise = userServise;
   }
 
   @GetMapping
   public List<User> index() {
-    return userServise.GetAllUser();
+    return userServise.getAllUsers();
   }
 
   @PostMapping

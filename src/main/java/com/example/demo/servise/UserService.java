@@ -7,15 +7,15 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.repositories.User;
+import com.example.demo.model.User;
 import com.example.demo.repositories.UserRepository;
 
 @Service
-public class UserServise {
+public class UserService {
 
   private final UserRepository userRepository;
 
-  UserServise(UserRepository userRepository) {
+  UserService(UserRepository userRepository) {
     this.userRepository = userRepository;
   }
 
